@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/jedryan/Desktop/gamification clone/wwwroot/3rdpartylicenses.txt",
+      "PackagePath": "staticwebassets/3rdpartylicenses.txt"
+    },
+    {
+      "Id": "/Users/jedryan/Desktop/gamification clone/wwwroot/browser/favicon.ico",
+      "PackagePath": "staticwebassets/browser/favicon.ico"
+    },
+    {
+      "Id": "/Users/jedryan/Desktop/gamification clone/wwwroot/browser/index.html",
+      "PackagePath": "staticwebassets/browser/index.html"
+    },
+    {
+      "Id": "/Users/jedryan/Desktop/gamification clone/wwwroot/browser/main-MIJNM7R2.js",
+      "PackagePath": "staticwebassets/browser/main-MIJNM7R2.js"
+    },
+    {
+      "Id": "/Users/jedryan/Desktop/gamification clone/wwwroot/browser/polyfills-RT5I6R6G.js",
+      "PackagePath": "staticwebassets/browser/polyfills-RT5I6R6G.js"
+    },
+    {
+      "Id": "/Users/jedryan/Desktop/gamification clone/wwwroot/browser/styles-5INURTSO.css",
+      "PackagePath": "staticwebassets/browser/styles-5INURTSO.css"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.gamification-project.props",
+      "PackagePath": "build\\gamification-project.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.gamification-project.props",
+      "PackagePath": "buildMultiTargeting\\gamification-project.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.gamification-project.props",
+      "PackagePath": "buildTransitive\\gamification-project.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.gamification-project.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

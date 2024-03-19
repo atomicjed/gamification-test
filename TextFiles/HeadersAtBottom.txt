@@ -1,0 +1,13 @@
+<div class="flex flex-col w-[100%] justify-center items-center mt-[100px]">
+      <div class="w-[70%] flex items-center justify-between">
+        <div class="text-[1.2rem]">8
+          <fa-icon [icon]="faFire" class="text-[rgb(255,62,0)]"></fa-icon>
+          Longest Streak
+        </div>
+        <div class="text-[1.2rem]"><span
+          class="bg-[rgba(255,62,0)] rounded-full text-white px-3 mx-1 py-1">2 Weeks</span> Running
+        </div>
+        <div class="text-[1.2rem]">Born a <span class="bg-[rgba(255,62,0)] rounded-full text-white px-3 mx-1 py-1">Winner</span>
+        </div>
+      </div>
+    </div>

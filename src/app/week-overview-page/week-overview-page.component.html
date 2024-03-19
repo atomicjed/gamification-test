@@ -1,0 +1,12 @@
+<div class="relative h-screen">
+  <div class="bg-gray-100 ml-[10vw] h-[100%]">
+    <app-header></app-header>
+    <!-- Your content here -->
+    <app-week-header-slider [fakeWeekKeys]="fakeWeekKeys" [userId]="userId"></app-week-header-slider>
+    <div class="w-[100%] flex h-auto  justify-center gap-[15px] py-6">
+      <div *ngFor="let day of daysOfTheWeek">
+        <app-day-card [currentWeek]="currentWeek" [day]="day" [userId]="userId"></app-day-card>
+      </div>
+    </div>
+  </div>
+</div>

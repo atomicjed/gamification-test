@@ -1,0 +1,8 @@
+<div *ngIf="userExists">
+  <div class="h-[100vh] fixed left-0 top-0 w-[10vw] border-r-4 border-r-solid border-r-[#eee] "></div>
+  <app-navbar></app-navbar>
+  <app-week-overview-page></app-week-overview-page>
+</div>
+<div *ngIf="!userExists">
+  <app-log-in-page></app-log-in-page>
+</div>

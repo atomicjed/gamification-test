@@ -1,0 +1,23 @@
+/*.container {*/
+/*  width: 200px;*/
+/*  height: 120px;*/
+/*  overflow: hidden;*/
+/*  position: relative;*/
+/*}*/
+
+/*.reveal-text {*/
+/*  position: absolute;*/
+/*  bottom: 10px;*/
+/*  width: 100%;*/
+/*  background-color: #fff;*/
+/*  animation: revealAnimation 2s ease forwards;*/
+/*}*/
+
+/*@keyframes revealAnimation {*/
+/*  0% {*/
+/*    transform: translateY(100%);*/
+/*  }*/
+/*  100% {*/
+/*    transform: translateY(0);*/
+/*  }*/
+/*}*/

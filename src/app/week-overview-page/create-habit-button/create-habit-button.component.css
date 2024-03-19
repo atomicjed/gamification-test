@@ -1,0 +1,7 @@
+.custom-shadow:hover {
+  box-shadow: 0 0 5px #fff;
+}
+
+.shadow-black:hover {
+  box-shadow: 0 0 8px #000;
+}

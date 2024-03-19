@@ -1,0 +1,53 @@
+//Below are not currently in use
+  public async Task<Habit> GetAsync(string id) => await _habitCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+  public async Task CreateAsync(Habit habit) => await _habitCollection.InsertOneAsync(habit);
+    public async Task UpdateAsync(Habit habit) => await _habitCollection.ReplaceOneAsync(x => x.Id == habit.Id, habit);
+
+     public async Task<Habit> GetAsync(string id) => await _habitCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+
+
+
+
+  //Below is not currently in use
+
+    [HttpGet("{id:length(24)}")]
+    public async Task<IActionResult> Get(string id)
+    {
+      var existingHabit = await _habitsService.GetAsync(id);
+
+      if (existingHabit is null)
+        return NotFound();
+
+      return Ok(existingHabit);
+    }
+
+    [HttpGet("{userId}")]
+    public async Task<IActionResult> GetCurrentUserSchedule(string userId)
+    {
+      var existingHabit = await _habitsService.GetCurrentUserSchedule(userId);
+
+      if (existingHabit is null)
+        return NotFound();
+
+      return Ok(existingHabit);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Post(Habit habit)
+    {
+      await _habitsService.CreateAsync(habit);
+      return CreatedAtAction(nameof(Get), new { id = habit.Id }, habit);
+    }
+
+    [HttpDelete("{id:length(24)}")]
+    public async Task<IActionResult> Delete(string id)
+    {
+      var existingHabit = await _habitsService.GetAsync(id);
+
+      if (existingHabit is null)
+        return BadRequest();
+
+      await _habitsService.RemoveAsync(id);
+
+      return NoContent();
+    }

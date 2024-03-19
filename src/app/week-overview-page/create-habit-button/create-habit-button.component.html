@@ -1,0 +1,15 @@
+<div *ngIf="isCurrentWeek()">
+  <div (click)="openCreateHabitDialog(day, weekKeys, weekIndex, currentDate)" *ngIf="getFutureDays(day)"
+       [ngClass]="{'': day === currentDay, 'k': day === currentDay, 'text': day !== currentDay, 'shadow-black': day === currentDay, 'custom-shadow': day !== currentDay}"
+       class="bg-[#ff3e00] text-white w-[200px] mt-[25px] rounded-lg px-4 mx-2 py-2 shadow-sm hover:cursor-pointer transition duration-500 flex justify-between text-white">
+    <p class="text-white">Create a habit</p>
+    <fa-icon class="text-white" [icon]="faPlus"></fa-icon>
+  </div>
+</div>
+<div *ngIf="isLastWeek()">
+  <div (click)="openCreateHabitDialog(day, weekKeys, weekIndex, currentDate)"
+       class="bg-[#ff3e00] text-white custom-shadow w-[200px] mt-[25px] rounded-lg px-4 mx-2 py-2 shadow-sm hover:cursor-pointer transition duration-500 flex justify-between">
+    <p class="">Create a habit</p>
+    <fa-icon [icon]="faPlus"></fa-icon>
+  </div>
+</div>

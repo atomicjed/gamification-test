@@ -1,0 +1,14 @@
+<div [ngClass]="{'bg-white shadow': isCurrentWeek() && day === currentDay}"
+     class="bg-[#15171c] rounded-lg  pt-2 pb-4 min-w-[200px] card">
+  <h3
+    [ngClass]="{'text-black': isCurrentWeek() && day === currentDay, 'text-white': day !== currentDay || !isCurrentWeek()}"
+    class="px-6 py-4 text-[1rem] font-bold">{{ day }}</h3>
+  <div *ngIf="day">
+    <div *ngFor="let habit of getHabitsForDay(day)">
+      <app-habit-component [currentDate]="currentDate" [currentDay]="currentDay" [currentWeek]="currentWeek" [day]="day"
+                           [habit]="habit" [userId]="userId"></app-habit-component>
+    </div>
+  </div>
+  <app-create-habit-button [currentDate]="currentDate" [currentDay]="currentDay" [currentWeek]="currentWeek"
+                           [day]="day"></app-create-habit-button>
+</div>

@@ -1,0 +1,20 @@
+<div (click)="onOpen()" [ngClass]="{'black': !selectedOption.isCompleted, 'green': selectedOption.isCompleted}" id="button" class="transition duration-500 ease-in-out4e321trrounded-md border border-solid rounded-lg border-[#ccc] bg-transparent px-6 py-2 inline-block hover:cursor-pointer">
+  <div class="flex gap-[10px] items-center text-[1.1rem] font-light">
+    <div *ngIf="!selectedOption.isCompleted && selectedOption.isFuture" class="w-2 h-2 rounded-full border border-solid border-gray-500"></div>
+    <fa-icon *ngIf="selectedOption.isCompleted" [icon]="faCircleCheck" class="text-[0.7rem] text-[#0ec201]"></fa-icon>
+    <fa-icon *ngIf="!selectedOption.isCompleted && !selectedOption.isFuture" [icon]="faCircleXmark" class="text-[0.7rem] text-red-500"></fa-icon>
+  <div>{{selectedOption?.name || "Select an option"}}</div>
+</div>
+  <div *ngIf="isOpen" id="dropdown" class="transition duration-500 ease-in-out rounded-lg">
+    <ul class="options-list">
+    <li *ngFor="let option of options" (click)="selectedOption = option" [ngClass]="{'rounded-b-md': !option.isCompleted && !option.isFuture, 'rounded-t-md': !option.isCompleted && option.isFuture}">
+      <div class="flex gap-[5px] items-center">
+      <div *ngIf="!option.isCompleted && option.isFuture" class="w-2 h-2 rounded-full border border-solid border-gray-500"></div>
+        <fa-icon *ngIf="option.isCompleted" [icon]="faCircleCheck" class="text-[0.7rem] text-[#0ec201]"></fa-icon>
+        <fa-icon *ngIf="!option.isCompleted && !option.isFuture" [icon]="faCircleXmark" class="text-[0.7rem] text-red-500"></fa-icon>
+        <div>{{option.name}}</div>
+      </div>
+    </li>
+    </ul>
+  </div>
+</div>

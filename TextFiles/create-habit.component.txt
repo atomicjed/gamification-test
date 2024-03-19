@@ -1,0 +1,351 @@
+import {Component, OnInit} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {CreateHabitModal} from "../modals/create-habit-modal";
+import {faBarsStaggered} from "@fortawesome/free-solid-svg-icons/faBarsStaggered";
+import {faPlus} from "@fortawesome/free-solid-svg-icons/faPlus";
+import {faCircleXmark} from "@fortawesome/free-solid-svg-icons/faCircleXmark";
+import {faArrowLeftLong} from "@fortawesome/free-solid-svg-icons/faArrowLeftLong";
+import {faArrowRightLong} from "@fortawesome/free-solid-svg-icons/faArrowRightLong";
+import {faCircleCheck} from "@fortawesome/free-solid-svg-icons/faCircleCheck";
+import {GetUserService} from "../Services/get-user-service";
+import {GetRequestService} from "../Services/get-request-service";
+import {HttpClient} from "@angular/common/http";
+import {CreateTemplateScheduleService} from "../Services/create-template-schedule-service";
+import {UpdateStatusModal} from "../modals/update-status-modal/update-status-modal";
+import {AddNewWeekService} from "../Services/add-new-week-service";
+import {AddStartDateToWeekService} from "../Services/add-start-date-to-week-service";
+import {DatePipe} from "@angular/common";
+
+interface HabitModalData {
+  day: string;
+  activityName: string;
+  userId: string
+}
+
+interface ModalData {
+  day: string,
+  weekKeys: string[],
+  weekIndex: number
+}
+
+interface WeekActivities {
+  monday: any[];
+  tuesday: any[];
+  wednesday: any[];
+  thursday: any[];
+  friday: any[];
+  saturday: any[];
+}
+interface Activity {
+  activityName: string;
+  completed: boolean;
+  isForEveryWeek: boolean;
+}
+interface WeekData {
+  [week: string]: Activity[];
+}
+
+interface WeekDates {
+  [key: string]: string;
+}
+
+@Component({
+  selector: 'app-create-habit',
+  templateUrl: './create-habit.component.html',
+  styleUrl: './create-habit.component.css'
+})
+
+
+export class CreateHabitComponent implements OnInit {
+
+  faStaggered = faBarsStaggered;
+  faPlus = faPlus;
+  faCircleXmark = faCircleXmark;
+  faCircleCheck = faCircleCheck;
+  faArrowRightLong = faArrowRightLong;
+  faArrowLeftLong = faArrowLeftLong;
+
+  currentDateIsInLastWeek: boolean = true;
+  lastWeekStartDate: string = '';
+  currentWeek: number = 0;
+  weekIndex: number = 1;
+  userId: string = '';
+  currentDate: Date = new Date();
+  currentDay: string = this.getCurrentDay();
+  isFirstTimeUser: boolean = false;
+  weekKeys: string[] = [];
+  monday: string = '';
+  nextWeekActivities: WeekActivities = {
+    monday: [],
+    tuesday: [],
+    wednesday: [],
+    thursday: [],
+    friday: [],
+    saturday: []
+  };
+  formatStartOfWeek: string | null = '';
+  formatEndOfWeek: string | null = '';
+  daysOfTheWeek: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  dates: WeekDates = {};
+  mondayHabits: { activityName: string; completed: boolean, isForEveryWeek: boolean }[] = [];
+  tuesdayHabits: { activityName: string; completed: boolean, isForEveryWeek: boolean }[] = [];
+  wednesdayHabits: { activityName: string; completed: boolean, isForEveryWeek: boolean }[] = [];
+  thursdayHabits: { activityName: string; completed: boolean, isForEveryWeek: boolean }[] = [];
+  fridayHabits: { activityName: string; completed: boolean, isForEveryWeek: boolean }[] = [];
+  saturdayHabits: { activityName: string; completed: boolean, isForEveryWeek: boolean }[] = [];
+  async getHabits() {
+    try {
+      const data = await this.getRequestService.getRequest(this.userId).toPromise();
+      this.weekKeys = Object.keys(data.monday);
+
+      this.mondayHabits = data.monday[this.weekKeys[this.weekIndex]];
+      this.tuesdayHabits = data.tuesday[this.weekKeys[this.weekIndex]];
+      this.wednesdayHabits = data.wednesday[this.weekKeys[this.weekIndex]];
+      this.thursdayHabits = data.thursday[this.weekKeys[this.weekIndex]];
+      this.fridayHabits = data.friday[this.weekKeys[this.weekIndex]];
+      this.saturdayHabits = data.saturday[this.weekKeys[this.weekIndex]];
+
+      const lastWeekName = `Week${this.weekKeys.length}`;
+      this.lastWeekStartDate = data.dates[lastWeekName];
+      this.dates = data.dates;
+      //this.formatDate();
+    } catch (error) {
+      this.isFirstTimeUser = true;
+    }
+  }
+
+  constructor(private addStartDateService: AddStartDateToWeekService, private addNewWeekService: AddNewWeekService, private getRequestService: GetRequestService, private createTemplateScheduleService: CreateTemplateScheduleService, private http: HttpClient, private getUserService: GetUserService, private dialog: MatDialog, private datePipe: DatePipe) {
+  }
+
+  ngOnInit() {
+    this.getUserAndHabits();
+  }
+
+  //Check for new week
+  async filterForEveryWeek() {
+    try {
+      const data = await this.getRequestService.getRequest(this.userId).toPromise();
+      const daysOfWeek: (keyof WeekActivities)[] = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+
+      for (let day of daysOfWeek) {
+        const lastWeekActivities = data[day][`Week${this.weekKeys.length}`];
+        const everyWeekActivities = lastWeekActivities.filter((activity: any) => activity.isForEveryWeek);
+        this.nextWeekActivities[day] = everyWeekActivities;
+      }
+      console.log(JSON.stringify(this.nextWeekActivities));
+    } catch (error) {
+      console.log("Error", error);
+    }
+  }
+  async addNewWeek() {
+    const weekName = `Week${this.weekKeys.length + 1}`;
+    const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const lastWeekDate = new Date(this.lastWeekStartDate);
+    const currentDate = new Date();
+    if (currentDate >= lastWeekDate) {
+      await this.filterForEveryWeek();
+      const bodyData = this.nextWeekActivities;
+      this.addNewWeekService.addNewWeek(this.userId, weekName, bodyData)
+        .subscribe(
+          () => {
+            console.log("New week added successfully.");
+            const weekName = `Week${this.weekKeys.length + 1}`;
+            const newDate = new Date(lastWeekDate);
+            newDate.setDate(lastWeekDate.getDate() + 7);
+
+            const newWeekStartDate = newDate.toISOString();
+            this.addStartDateService.addNewWeek(this.userId, weekName, newWeekStartDate).subscribe(() => {
+              console.log("Start Date added successfully")
+              this.getUserAndHabits();
+            }, error => {
+              console.log("Error adding start date", error)
+            })
+          },
+          error => {
+            console.log("Error adding new week:", error);
+          }
+        );
+    } else
+      console.log("Not into last week yet")
+  }
+
+  //Display Week Dates
+  formatDate() {
+    const startOfWeekString = this.dates[`Week${this.weekIndex + 1}`];
+    const startOfWeekDate = new Date(startOfWeekString);
+    this.formatStartOfWeek = this.datePipe.transform(startOfWeekDate, 'dd/MM');
+
+    const endOfWeekDate = new Date(startOfWeekDate);
+    endOfWeekDate.setDate(endOfWeekDate.getDate() + 7);
+    this.formatEndOfWeek = this.datePipe.transform(endOfWeekDate, 'dd/MM');
+  }
+
+
+  //Change week
+  incrementWeekIndex() {
+    if (this.weekIndex <= this.weekKeys.length - 1) {
+      this.weekIndex++;
+      this.getHabits();
+    }
+  }
+
+  decrementWeekIndex() {
+    if (this.weekIndex >= 1) {
+      this.weekIndex--;
+      this.getHabits();
+    }
+  }
+
+
+  //Open Modals
+  openHabitDialog(day: string, activityName: string): void {
+    const modalData: HabitModalData = {
+      day: day,
+      activityName: activityName,
+      userId: this.userId
+    };
+    if (day == this.currentDay) {
+      const dialogRef = this.dialog.open(UpdateStatusModal, {
+        data: modalData
+      });
+      dialogRef.afterClosed().subscribe(() => {
+        this.getHabits();
+      })
+    }
+  }
+
+  openDialog(day: string, weekKeys: string[], weekIndex: number): void {
+    const modalData: ModalData = {
+      day: day,
+      weekKeys: weekKeys,
+      weekIndex: weekIndex
+    };
+    const dialogRef = this.dialog.open(CreateHabitModal, {
+      data: modalData
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      this.getHabits();
+    })
+  }
+
+  //Get User and habits
+  async getUserAndHabits(): Promise<void> {
+    await this.getUser();
+    await this.getHabits();
+    await this.createScheduleTemplate();
+    await this.getHabits().then(() => {
+      this.weekIndex = this.weekKeys.length - 2;
+      this.currentWeek = this.weekKeys.length - 1;
+      this.getHabits();
+    })
+  }
+
+  async getUser() {
+    try {
+      this.userId = await this.getUserService.getUserId();
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
+
+
+  //Implementation for displaying habits specific to day
+  getHabitsForDay(day: string) {
+    if (day === 'Monday')
+      return this[`mondayHabits`];
+    if (day === 'Tuesday')
+      return this['tuesdayHabits'];
+    if (day === 'Wednesday')
+      return this['wednesdayHabits'];
+    if (day === 'Thursday')
+      return this['thursdayHabits'];
+    if (day === 'Friday')
+      return this['fridayHabits'];
+    if (day === 'Saturday')
+      return this['saturdayHabits']
+    else {
+      return;
+    }
+  }
+
+
+//Creating a template in database for new users
+  async postData(): Promise<void> {
+    const currentDate = new Date();
+    const dayOfWeek = currentDate.getDay();
+    const daysUntilNextMonday = dayOfWeek === 1 ? 7 : (1 + 7 - dayOfWeek);
+    const nextMonday = new Date(currentDate);
+   // nextMonday.setDate(currentDate.getDate() - 1);
+    nextMonday.setDate(currentDate.getDate() + daysUntilNextMonday);
+
+    try {
+      const data = {
+        UserId: this.userId,
+        Dates: {
+          Week1: currentDate,
+          Week2: nextMonday
+        },
+        Monday: {
+          Week1: [],
+          Week2: []
+        },
+        Tuesday: {
+          Week1: [],
+          Week2: []
+        },
+        Wednesday: {
+          Week1: [],
+          Week2: []
+        },
+        Thursday: {
+          Week1: [],
+          Week2: []
+        },
+        Friday: {
+          Week1: [],
+          Week2: []
+        },
+        Saturday: {
+          Week1: [],
+          Week2: []
+        }
+      };
+
+      await this.createTemplateScheduleService.templatePostRequest(this.userId, data).toPromise();
+      console.log('Data posted successfully');
+      await this.getHabits();
+      await this.addNewWeek();
+    } catch (error) {
+      console.error('Error posting data:', error);
+    }
+  }
+
+  async createScheduleTemplate() {
+    if (this.userId && this.isFirstTimeUser) {
+      await this.postData();
+    }
+  }
+
+  //Managing previous and future days
+  getCurrentDay(): string {
+    const days: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayIndex: number = this.currentDate.getDay();
+    return days[dayIndex];
+  }
+
+  getFutureDays(day: string) {
+    const days: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayIndex: number = this.currentDate.getDay();
+    const futureDays: string[] = days.filter((day, index) => index >= dayIndex);
+    return futureDays.includes(day);
+  }
+
+  getPreviousDays(day: string) {
+    const days: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayIndex: number = this.currentDate.getDay();
+    const previousDays: string[] = days.filter((day, index) => index < dayIndex);
+    return previousDays.includes(day);
+  }
+}

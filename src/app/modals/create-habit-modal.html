@@ -1,0 +1,63 @@
+<div class="bg-white w-[400px] h-auto pb-8 flex flex-col ">
+  <div class="w-full flex flex-col items-center justify-center mt-[25px]">
+    <fa-icon [icon]="faPersonWalking" class="text-[#0ec201] text-[2rem]"></fa-icon>
+    <div class="w-[90%] pt-[15px] border-b border-b-solid border-b-[#eee]"></div>
+  </div>
+  <p class="text-[1.3rem] font-normal px-6 pt-4 text-center">Create a habit</p>
+  <p class="text-center px-6 font-bold">{{ data.day }}</p>
+  <form (submit)="onSubmit(data.day, userId)" [formGroup]="applyForm" class="flex flex-col ">
+    <label class="px-6" for="activity-name">Habit Name</label>
+    <input class="bg-white py-2 px-2 mx-4 rounded-md border border-solid border-[#eee]" formControlName="activityName"
+           id="activity-name" placeholder="Enter Habit Name"
+           type="text">
+    <small *ngIf="applyForm.get('activityName')?.invalid && applyForm.get('activityName')?.touched"
+           class="px-6 text-red-600 font-medium text-[0.8rem]">
+      *Activity name cannot be empty
+    </small>
+    <div class="px-6 flex gap-[5px] items-center justify-center h-auto w-auto pt-4 pb-2">
+      <input (change)="toggleIsForEveryWeek()" class="checkbox hover:bg-gray-800" formControlName="isForEveryWeek" id="check"
+             type="checkbox">
+      <label class="label font-medium" for="check">Add habit to every week?</label>
+    </div>
+    <div *ngIf="isForEveryWeek" class="w-full flex flex-col px-6 justify-between gap-[10px]">
+        <div class ="flex gap-[15px]">
+      <div class="flex gap-[5px]">
+        <input class="checkbox2 hover:bg-gray-800" id="check2"
+                  type="checkbox">
+        <label class="label font-medium" for="check">Monday</label>
+      </div>
+      <div class="flex gap-[5px]">
+      <input class="checkbox2 hover:bg-gray-800" id="check3"
+             type="checkbox">
+      <label class="label font-medium" for="check">Tuesday</label>
+      </div>
+      <div class="flex gap-[5px]">
+      <input class="checkbox2 hover:bg-gray-800"  id="check4"
+             type="checkbox">
+      <label class="label font-medium" for="check">Wednesday</label>
+      </div>
+        </div>
+        <div class="flex gap-[15px]">
+        <div class="flex gap-[5px]">
+      <input class="checkbox2 hover:bg-gray-800"  id="check5"
+             type="checkbox">
+      <label class="label font-medium" for="check">Thursday</label>
+      </div>
+      <div class="flex gap-[5px]">
+      <input class="checkbox2 hover:bg-gray-800" id="check6"
+             type="checkbox">
+      <label class="label font-medium" for="check">Friday</label>
+      </div>
+      <div class="flex gap-[5px]">
+      <input class="checkbox2 hover:bg-gray-800" id="check7"
+             type="checkbox">
+      <label class="label font-medium" for="check">Saturday</label>
+      </div>
+      </div>
+    </div>
+    <div class="flex w-full justify-center gap-[15px]">
+      <button class="border border-[#eee] rounded-lg my-4 py-2 px-4 " mat-dialog-close>Cancel</button>
+      <button [disabled]="!applyForm.valid" class="py-2 my-4 px-6 bg-[#ff3e00] text-white rounded-lg" type="submit">Send</button>
+    </div>
+  </form>
+</div>

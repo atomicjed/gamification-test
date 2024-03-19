@@ -1,0 +1,17 @@
+<div (click)="openHabitStatusDialog(day, habit.activityName)"
+     [ngClass]="{'hover:cursor-pointer hover:bg-gray-700': day == currentDay && isCurrentWeek()}"
+     class="w-[200px] mx-2 px-4 py-3 transition duration-500 ease-in-out shadow-sm my-2 rounded-md bg-[#1d1f26] text-[#0ec201] flex items-center justify-between ">
+  <div class="flex gap-2 h-full items-center justify-center">
+    <fa-icon
+      *ngIf="!habit.completed && getPreviousDays(day) && isCurrentWeek() || !habit.completed && weekIndex < (currentWeek -1)"
+      [icon]="faCircleXmark"
+      class="text-[0.8rem] text-red-500"></fa-icon>
+    <fa-icon *ngIf="habit.completed" [icon]="faCircleCheck" class="text-[0.8rem] text-[#0ec201]"></fa-icon>
+    <div
+      *ngIf="!habit.completed && getFutureDays(day) && isCurrentOrLaterWeek() || !habit.completed && isLaterWeek()"
+      class="w-2 h-2 rounded-full border border-solid border-gray-500"></div>
+    <div [ngClass]="{'text-white': !habit.completed}">{{ habit.activityName }}</div>
+  </div>
+  <fa-icon *ngIf="day == currentDay && isCurrentWeek()" [icon]="faStaggered"
+           [ngClass]="{'text-[#0ec201]': habit.completed, 'text-[#ff3e00]': !habit.completed}"></fa-icon>
+</div>

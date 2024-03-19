@@ -1,0 +1,50 @@
+<div class="bg-black w-full flex flex-col items-center justify-center">
+  <div class="pt-12 pb-8 flex flex-col gap-[25px]">
+    <div class="text-[2rem] text-white text-center">{{weekKeys[0].slice(0, 4) + ' ' + weekKeys[weekIndex].slice(4)}}</div>
+    <div class="flex gap-[25px] text-white items-center justify-center">
+      <fa-icon [icon]="faArrowLeftLong" (click)="decrementWeekIndex()" [ngClass]="{'text-gray-500 hover:translate-x-[0px]': weekIndex == 0}" class="text-[1.3rem] transition duration-500 ease-in-out hover:translate-x-[-2px] hover:cursor-pointer">arrow, {{weekIndex}}</fa-icon>
+      <div>{{formatStartOfWeek}} - {{formatEndOfWeek}}</div>
+      <fa-icon [icon]="faArrowRightLong" (click)="incrementWeekIndex()" [ngClass]="{'text-gray-500 hover:translate-x-[0px]': weekIndex >= weekKeys.length - 1}" class="text-[1.3rem] transition duration-500 ease-in-out hover:translate-x-[2px] hover:cursor-pointer"></fa-icon>
+    </div>
+  </div>
+  <div class="w-[100vw] flex h-[100vh]  justify-center gap-[15px] py-6">
+    <div *ngFor="let day of daysOfTheWeek">
+      <!--    Card component-->
+      <div [ngClass]="{'bg-white': (((weekIndex - currentWeek) + 1) == 0) && day === currentDay}"
+           class="bg-[#15171c] rounded-lg  pt-2 pb-4 min-w-[200px]">
+        <h3 [ngClass]="{'text-black': (((weekIndex - currentWeek) + 1) == 0) && day === currentDay, 'text-white': day !== currentDay || (((weekIndex - currentWeek) + 1) != 0)}"
+            class="px-6 py-4 text-[1rem] font-bold">{{ day }}</h3>
+        <div *ngFor="let habit of getHabitsForDay(day)">
+          <div (click)="openHabitDialog(day, habit.activityName)"
+               [ngClass]="{'hover:cursor-pointer hover:bg-gray-700': day == currentDay && (((weekIndex - currentWeek) + 1) == 0)}"
+               class="w-[200px] mx-2 px-4 py-3 transition duration-500 ease-in-out shadow-sm my-2 rounded-md bg-[#1d1f26] text-[#0ec201] flex items-center justify-between ">
+            <div class="flex gap-2 h-full items-center justify-center">
+              <fa-icon *ngIf="!habit.completed && getPreviousDays(day) && weekIndex == (currentWeek -1) || !habit.completed && weekIndex < (currentWeek -1)" [icon]="faCircleXmark"
+                       class="text-[0.8rem] text-red-500"></fa-icon>
+              <fa-icon *ngIf="habit.completed" [icon]="faCircleCheck" class="text-[0.8rem] text-[#0ec201]"></fa-icon>
+              <div *ngIf="!habit.completed && getFutureDays(day) && weekIndex >= (currentWeek - 1) || !habit.completed && weekIndex > (currentWeek - 1)"
+                   class="w-2 h-2 rounded-full border border-solid border-gray-500"></div>
+              <div [ngClass]="{'text-white': !habit.completed}">{{ habit.activityName }}</div>
+            </div>
+            <fa-icon *ngIf="day == currentDay && (((weekIndex - currentWeek) + 1) == 0)" [icon]="faStaggered" class="text-[#0ec201]"></fa-icon>
+          </div>
+        </div>
+        <div *ngIf="((weekIndex - weekKeys.length) + 2) == 0 ">
+        <div (click)="openDialog(day, weekKeys, weekIndex)" *ngIf="getFutureDays(day)"
+             [ngClass]="{'bg-[#1d1f26]': day === currentDay, 'text-white': day === currentDay, 'text-black': day!== currentDay, 'bg-white': day !== currentDay, 'shadow-black': day === currentDay, 'custom-shadow': day !== currentDay}"
+             class=" w-[200px] mt-[25px] rounded-lg px-4 mx-2 py-2 shadow-sm hover:cursor-pointer transition duration-500 flex justify-between">
+          <p class="">Create a habit</p>
+          <fa-icon [icon]="faPlus"></fa-icon>
+        </div>
+        </div>
+        <div *ngIf="((weekIndex - weekKeys.length) + 1) == 0 ">
+          <div (click)="openDialog(day, weekKeys, weekIndex)"
+               class="text-black bg-white custom-shadow w-[200px] mt-[25px] rounded-lg px-4 mx-2 py-2 shadow-sm hover:cursor-pointer transition duration-500 flex justify-between">
+            <p class="">Create a habit</p>
+            <fa-icon [icon]="faPlus"></fa-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

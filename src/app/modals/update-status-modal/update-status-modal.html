@@ -1,0 +1,14 @@
+<div class="bg-white px-12 py-12 w-auto  rounded-lg">
+  <h1>{{ data.day }}    - <span class="font-light">{{ data.activityName }}</span></h1>
+  <div class="border border-solid border-[#eee] w-[50px]"></div>
+  <div class="my-4 flex flex-col gap-[25px]">
+    <div class="font-light text-[1.1rem] mt-2">Select Status</div>
+    <app-dropdown-menu (optionSelected)="handleOptionSelected($event)"></app-dropdown-menu>
+    <div *ngIf="completedValue" class="font-light mt-[10px]">Congrats! Keep it up!</div>
+    <div *ngIf="!completedValue" class="font-light mt-[10px]">Keep Going!</div>
+    <div class="flex gap-[5px] w-full mt-[0px]">
+      <button (click)="close()" class="border border-solid border-[#ccc] px-6 py-2 rounded-lg">Close</button>
+      <button (click)="onSubmit()" class="bg-[#ff3e00] text-white px-6 py-2 rounded-lg">Save</button>
+    </div>
+  </div>
+</div>

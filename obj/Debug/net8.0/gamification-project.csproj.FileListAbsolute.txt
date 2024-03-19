@@ -1,0 +1,139 @@
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/angular.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/appsettings.Development.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/appsettings.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/package-lock.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/package.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/tsconfig.app.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/tsconfig.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/tsconfig.spec.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/gamification-project
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/gamification-project.deps.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/gamification-project.runtimeconfig.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/gamification-project.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/gamification-project.pdb
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/gamification-project.csproj.AssemblyReference.cache
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/gamification-project.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/gamification-project.AssemblyInfoInputs.cache
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/gamification-project.AssemblyInfo.cs
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/gamification-project.csproj.CoreCompileInputs.cache
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/gamification-project.MvcApplicationPartsAssemblyInfo.cs
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/gamification-project.MvcApplicationPartsAssemblyInfo.cache
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/staticwebassets.build.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/staticwebassets.development.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/staticwebassets/msbuild.gamification-project.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/staticwebassets/msbuild.build.gamification-project.props
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.gamification-project.props
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.gamification-project.props
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/scopedcss/bundle/gamification-project.styles.css
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/gamifica.EA2E3F72.Up2Date
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/gamification-project.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/refint/gamification-project.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/gamification-project.pdb
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/gamification-project.genruntimeconfig.cache
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/ref/gamification-project.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/gamification-project.staticwebassets.runtime.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/obj/Debug/net8.0/gamification-project.sourcelink.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/AWSSDK.Core.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/AWSSDK.SecurityToken.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/DnsClient.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/MongoDB.Bson.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/MongoDB.Driver.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/MongoDB.Driver.Core.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/MongoDB.Libmongocrypt.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/SharpCompress.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Snappier.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/ZstdSharp.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/runtimes/linux/native/libmongocrypt.so
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/runtimes/osx/native/libmongocrypt.dylib
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/runtimes/win/native/mongocrypt.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/coverage/coverage-final.json
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.Owin.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.Owin.Security.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.Owin.Security.Jwt.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.Owin.Security.OAuth.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Owin.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+/Users/jedryan/RiderProjects/gamification-project/gamification-project/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/angular.json
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/appsettings.Development.json
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/appsettings.json
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/tsconfig.app.json
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/tsconfig.json
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/package-lock.json
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/package.json
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/tsconfig.spec.json
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/gamification-project.staticwebassets.runtime.json
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/gamification-project
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/gamification-project.deps.json
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/gamification-project.runtimeconfig.json
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/gamification-project.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/gamification-project.pdb
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/AWSSDK.Core.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/AWSSDK.SecurityToken.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/DnsClient.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.Owin.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.Owin.Security.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.Owin.Security.Jwt.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Microsoft.Owin.Security.OAuth.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/MongoDB.Bson.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/MongoDB.Driver.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/MongoDB.Driver.Core.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/MongoDB.Libmongocrypt.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Owin.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/SharpCompress.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Snappier.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/ZstdSharp.dll
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/runtimes/linux/native/libmongocrypt.so
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/runtimes/osx/native/libmongocrypt.dylib
+/Users/jedryan/Desktop/gamification clone/bin/Debug/net8.0/runtimes/win/native/mongocrypt.dll
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/gamification-project.csproj.AssemblyReference.cache
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/gamification-project.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/gamification-project.AssemblyInfoInputs.cache
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/gamification-project.AssemblyInfo.cs
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/gamification-project.csproj.CoreCompileInputs.cache
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/gamification-project.MvcApplicationPartsAssemblyInfo.cs
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/gamification-project.MvcApplicationPartsAssemblyInfo.cache
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/gamification-project.sourcelink.json
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/staticwebassets.build.json
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/staticwebassets.development.json
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/staticwebassets/msbuild.gamification-project.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/staticwebassets/msbuild.build.gamification-project.props
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.gamification-project.props
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.gamification-project.props
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/scopedcss/bundle/gamification-project.styles.css
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/gamifica.EA2E3F72.Up2Date
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/gamification-project.dll
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/refint/gamification-project.dll
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/gamification-project.pdb
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/gamification-project.genruntimeconfig.cache
+/Users/jedryan/Desktop/gamification clone/obj/Debug/net8.0/ref/gamification-project.dll

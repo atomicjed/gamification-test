@@ -1,0 +1,16 @@
+<div class="pb-8 flex flex-col gap-[25px] items-center justify-center w-[100%] justify-center">
+  <div class="container">
+  <div class="reveal-text text-[2rem] text-center">Week {{ weekIndex + 1 }}</div>
+  </div>
+  <div class="flex gap-[25px] items-center justify-center">
+    <fa-icon (click)="decrementWeekIndex()" [icon]="faArrowLeftLong"
+             [ngClass]="{'text-gray-500 hover:translate-x-[0px]': weekIndex == 0}"
+             class="text-[1.3rem] transition duration-500 ease-in-out hover:translate-x-[-2px] hover:cursor-pointer">
+    </fa-icon>
+    <div *ngIf="weekIndex != 0">{{ formatStartOfWeek }} - {{ formatEndOfWeek }}</div>
+    <div *ngIf="weekIndex == 0">{{ formatStartOfFirstWeek }} - {{ formatEndOfFirstWeek }}</div>
+    <fa-icon (click)="incrementWeekIndex()" [icon]="faArrowRightLong"
+             [ngClass]="{'text-gray-500 hover:translate-x-[0px]': weekIndex >= weekKeys.length - 1}"
+             class="text-[1.3rem] transition duration-500 ease-in-out hover:translate-x-[2px] hover:cursor-pointer"></fa-icon>
+  </div>
+</div>

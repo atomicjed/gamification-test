@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/gamification-project.props" />
+</Project>
